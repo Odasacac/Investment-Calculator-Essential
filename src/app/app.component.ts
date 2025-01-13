@@ -15,22 +15,12 @@ import { AnnualData } from './interfaces/AnnualData';
 export class AppComponent 
 {
 
-  annualData: AnnualData = 
-  {
-    year: 0,
-    interest: 0,
-    valueEndOfYear: 0,
-    annualInvestment: 0,
-    totalInterest: 0,
-    totalAmountInvested: 0
-  }
+  annualData: AnnualData [] = [];
 
 
   datosRecibidos(datosUsuarioRecibidos: UserData)
   {
-    console.log(datosUsuarioRecibidos)
-    const investmentResult = this.investmentResult(datosUsuarioRecibidos);
-    console.log(investmentResult)
+    this.annualData = this.investmentResult(datosUsuarioRecibidos);
   }
 
   investmentResult(userData: UserData): AnnualData []

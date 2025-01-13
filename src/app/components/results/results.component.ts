@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input, Signal } from '@angular/core';
 import { AnnualData } from '../../interfaces/AnnualData';
 
 @Component({
@@ -9,5 +9,7 @@ import { AnnualData } from '../../interfaces/AnnualData';
 })
 export class ResultsComponent 
 {
-  datosTabla = input.required<AnnualData>();
+  datosTabla = input.required<AnnualData[]>();
+
+  hayDatos: Signal<boolean> = computed(() => this.datosTabla().length > 0);
 }

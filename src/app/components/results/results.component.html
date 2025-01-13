@@ -1,1 +1,31 @@
-<p>Please enter some values and press "Calculate"</p>
+@if (!hayDatos())
+{
+    <p>Please enter some values and press "Calculate"</p>
+}
+@else
+{
+    <table>
+        <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Investment Value</th>
+                    <th>Interest (Year)</th>
+                    <th>Total Interest</th>
+                    <th>Invested Capital</th>
+                </tr>
+        </thead>
+
+        <tbody>
+            @for (data of datosTabla(); track data)
+            {
+                <tr>
+                    <td>{{data.year}}</td>
+                    <td>{{data.year}}</td>
+                    <td>{{data.interest}}</td>
+                    <td>{{data.totalInterest}}</td>
+                    <td>{{data.year}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

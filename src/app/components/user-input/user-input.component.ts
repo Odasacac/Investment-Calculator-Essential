@@ -13,7 +13,6 @@ export class UserInputComponent
 
   datosUsuario = output<UserData>();
 
-
   camposFormulario =
   {
     initialInvestment: new FormControl(''),
@@ -28,6 +27,5 @@ export class UserInputComponent
   {
     this.datosUsuario.emit(this.formulario.value);
   }
-
 
 }

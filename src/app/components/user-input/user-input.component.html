@@ -1,19 +1,28 @@
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="input-group">
+        <p>
+            <label>Initial Investment</label>
+            <input formControlName= "initialInvestment" type="number">
+        </p>
 
-        <label>Initial Investment</label>
-        <input formControlName= "initialInvestment" type="number">
+        <p>
+            <label>Anual Investment</label>
+            <input formControlName= "annualInvestment" type="number">
+        </p>
 
-        <label>Anual Investment</label>
-        <input formControlName= "annualInvestment" type="number">
+        <p>
+            <label>Expected Return</label>
+            <input formControlName= "expectedReturn" type="number">
+        </p>
 
-        <label>Expected return</label>
-        <input formControlName= "expectedReturn" type="number">
-
-        <label>Duration</label>
-        <input formControlName= "duration" type="number">
+        <p>
+            <label>Duration</label>
+            <input formControlName= "duration" type="number">
+        </p>
 
     </div>
 
-    <button type="submit">CALCULATE</button>
+    <p>
+        <button type="submit">CALCULATE</button>
+    </p>
 </form>
