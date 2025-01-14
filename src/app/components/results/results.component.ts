@@ -1,9 +1,10 @@
 import { Component, computed, input, Signal } from '@angular/core';
 import { AnnualData } from '../../interfaces/AnnualData';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-results',
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: './results.component.html',
   styleUrl: './results.component.css'
 })

@@ -20,10 +20,10 @@
             {
                 <tr>
                     <td>{{data.year}}</td>
-                    <td>{{data.valueEndOfYear}}</td>
-                    <td>{{data.interest}}</td>
-                    <td>{{data.totalInterest}}</td>
-                    <td>{{data.totalAmountInvested}}</td>
+                    <td>{{data.valueEndOfYear | currency: "EUR"}}</td>
+                    <td>{{data.interest | currency: "EUR"}}</td>
+                    <td>{{data.totalInterest | currency: "EUR"}}</td>
+                    <td>{{data.totalAmountInvested | currency: "EUR"}}</td>
                 </tr>
             }
         </tbody>
