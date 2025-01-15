@@ -1,6 +1,7 @@
-import { Component, output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { UserData } from '../../interfaces/UserData';
+import { InvestmentService } from '../../services/investment.service';
 
 @Component({
   selector: 'app-user-input',
@@ -11,7 +12,7 @@ import { UserData } from '../../interfaces/UserData';
 export class UserInputComponent 
 {
 
-  datosUsuario = output<UserData>();
+  private investmentService = inject(InvestmentService);
 
   camposFormulario =
   {
@@ -25,7 +26,7 @@ export class UserInputComponent
 
   onSubmit()
   {
-    this.datosUsuario.emit(this.formulario.value);
+    this.investmentService.calculateInvestmentResult(this.formulario.value);
   }
 
 }

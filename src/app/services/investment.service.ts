@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Signal, signal } from '@angular/core';
 import { UserData } from '../interfaces/UserData';
 import { AnnualData } from '../interfaces/AnnualData';
 
@@ -7,7 +7,10 @@ import { AnnualData } from '../interfaces/AnnualData';
 })
 export class InvestmentService 
 {
-  calculateInvestmentResult(userData: UserData): AnnualData []
+
+  annualData = signal<AnnualData []>([]);
+  
+  calculateInvestmentResult(userData: UserData)
   {
     const annualData: AnnualData [] = [];
     let investmentValue = userData.initialInvestment;
@@ -32,6 +35,11 @@ export class InvestmentService
         
       }
     
-      return annualData;
+      this.annualData.set(annualData);
+  }
+
+  getData(): Signal<AnnualData[]>
+  {
+    return this.annualData;
   }
 }

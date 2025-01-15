@@ -1,6 +1,7 @@
-import { Component, computed, input, Signal } from '@angular/core';
+import { Component, computed, inject, input, Signal } from '@angular/core';
 import { AnnualData } from '../../interfaces/AnnualData';
 import { CurrencyPipe } from '@angular/common';
+import { InvestmentService } from '../../services/investment.service';
 
 @Component({
   selector: 'app-results',
@@ -10,7 +11,9 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class ResultsComponent 
 {
-  datosTabla = input.required<AnnualData[]>();
+
+  private investmentService = inject(InvestmentService);
+  datosTabla = this.investmentService.getData();
 
   hayDatos: Signal<boolean> = computed(() => this.datosTabla().length > 0);
 }

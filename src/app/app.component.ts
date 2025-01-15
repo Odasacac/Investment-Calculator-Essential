@@ -15,14 +15,6 @@ import { InvestmentService } from './services/investment.service';
 })
 export class AppComponent 
 {
-  private investmentService = inject(InvestmentService);
-  annualData = signal<AnnualData []>([]);
-
-
-  datosRecibidos(datosUsuarioRecibidos: UserData)
-  {
-    this.annualData.set(this.investmentService.calculateInvestmentResult(datosUsuarioRecibidos));
-  }
 
  
 }
